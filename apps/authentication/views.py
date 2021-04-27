@@ -29,6 +29,7 @@ class RegisterView(View):
             user_profile.password = make_password(
                 request.POST.get('password', ''))
             user_profile.save()
+            user_profile.create_cart()
             messages.info(request, '注册成功，请登录')
             return HttpResponseRedirect(reverse('auth:login'))
         else:

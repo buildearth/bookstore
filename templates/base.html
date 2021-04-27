@@ -62,7 +62,6 @@
                                     <li>
                                         <a href="{{ url('cart:detail') }}">
                                             <span class="glyphicon glyphicon-shopping-cart"></span> 购物车
-                                            <span class="badge">{{ request.user.cart.get_total_quantity() }}</span>
                                         </a>
                                     </li>
                                     <li class="dropdown">
@@ -78,12 +77,6 @@
                                             <li>
                                                 <a href="">
                                                     <span class="glyphicon glyphicon-user"></span> 我的主页</a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    <span class="glyphicon glyphicon-bell"></span> 消息
-                                                    <span class="badge pull-right">54</span>
-                                                </a>
                                             </li>
                                             <li>
                                                 <a href="{{ url('user:settings-get') }}">
