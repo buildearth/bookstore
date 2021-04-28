@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block page_content %}
+    <div class="row" id="search_content">
+        {% include 'include/category_nav.html' %}
+        <div id="top" class="col-md-offset-2 col-md-8">
+            <div class="index-content">
+                <div class="content-newbooks card">
+                    <h3>搜索结果</h3>
+                    {% if search_books is not none %}
+                        <div class="row">
+                            {% for book in search_books %}
+                                {{ macros.bookitem(book,'new'~loop.index) }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+        {% include 'include/new_hot_list.html' %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ static('/js/index.js') }}"></script>
+{% endblock %}
