@@ -94,6 +94,7 @@ class OrderView(View):
     def get(self, request):
         processing_orders = request.user.get_processing_orders()
         finished_orders = request.user.get_finished_orders()
+        # processing_orders = user_models.Order.objects.filter()
         return render(
             request, 'order.html', {
                 'processing_orders': processing_orders,
@@ -119,7 +120,7 @@ class OrderView(View):
             messages.info(request, '表单验证失败')
             return render(
                 request,
-                'settlement.html',
+                'index.html',
             )
 
 
